@@ -1,9 +1,9 @@
 [
   {
-    "nom": "Galon",
+    "nom": "test",
     "prénom": "Gauthier",
     "age": "18",
-    "adresse email": "gauthier.galon@epsi.fr",
+    "adresse email": "test",
     "type": "étudiant",
     "livres": [
       "Le Cycle de Mars, tome 1 : Les Sables de Mars",
