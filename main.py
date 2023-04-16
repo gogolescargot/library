@@ -1,5 +1,3 @@
-# Réalisé par Gauthier GALON
-
 import json
 
 def addBook():
