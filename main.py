@@ -1,4 +1,4 @@
-# Réalisé par Gauthier GALON et Olivier NOWAK
+# Réalisé par Gauthier GALON
 
 import json
 
