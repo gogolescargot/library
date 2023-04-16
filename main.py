@@ -1,5 +1,23 @@
 import json
 
+
+class Book:
+	def __init__(self,title,author,editor,year,type,disponible):
+		self.title = title
+		self.author = author
+		self.editor = editor
+		self.year = year
+		self.type = type
+		self.disponible = disponible
+	
+	def showBook(self):
+		print (self.title + ", écrit en " + self.year + " par " + self.author + " et édité par " + self.editor + " du genre " + self.type, end="")
+		if self.disponible == "True":
+				print(", Disponible")
+		else :
+			print(", non Disponible")
+			return 0
+		
 def addBook():
 	title,author,editor,year,type = input("Quel est le titre ? : "),input("Quel est le nom de l'auteur ? : "),input("Quel est le nom de l'editeur ? : "),input("Quel est l'année de création' ? : "),input("Quel est le genre ? : ")
 	file = open("livres.json", "r",encoding='utf-8')
@@ -11,6 +29,7 @@ def addBook():
 			return 1
 	newBook = {"titre": title,"auteur": author,"editeur": editor,"annee": year,"genre": type, "disponible": "True"}
 	books.append(newBook)
+	
 	file = open("livres.json", "w",encoding='utf-8')
 	json.dump(books, file, indent=2, ensure_ascii=False)
 	file.close()
@@ -183,6 +202,17 @@ def dropBook():
 	print("Utilisateur ou livre non trouvé")
 	return 1
 
+class User:
+	def __init__(self,name,surname,age,email,type,books):
+		self.name = name
+		self.surname = surname
+		self.age = age
+		self.email = email
+		self.type = type
+		self.books = books
+
+	def showUser(self):
+		print(self.name + " " + self.surname + ", " + self.age + ", " + self.email + ", " + self.type + str(self.books))
 
 
 def addUser():
@@ -263,6 +293,27 @@ def checkUsersBook():
 			for book in user["livres"]:
 				print(book + ", ", end="")
 			print("")	
+
+file = open("livres.json", "r",encoding='utf-8')
+data = json.load(file)
+file.close()
+
+listBooks = []
+for book in data:
+    listBooks.append(Book(book["titre"],book["auteur"],str(book["annee"]),book["editeur"],book["genre"],book["disponible"]))
+
+
+file = open("utilisateurs.json", "r",encoding='utf-8')
+data = json.load(file)
+file.close()
+
+listUsers = []
+for user in data:
+    listUsers.append(User(user["nom"],user["prénom"],str(user["age"]),user["adresse email"],user["type"],user["livres"]))
+    
+
+# listBooks[0].showBook()
+# listUsers[0].showUser()
 
 
 print("Que désirez vous faire ?")

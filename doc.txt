@@ -29,7 +29,7 @@ dropBook() : Retourne un livre
 	Paramètres utilisés pour trouver l'utilisateur : name, surname, email
 	Paramètres utilisés pour trouver le livre : title, author
 
-
+On peut afficher les utilisateurs à l'aide de la méthode showBook() ou showUser()
 
 Pour retrouver les utilisateurs dans les fonctions, on utilise ses informations (nom,prenom,email...).
 Pour retrouver les livres dans les fonctions, on utilise ses informations (titre,auteur etc...).
