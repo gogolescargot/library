@@ -1,1 +1,0 @@
-Système de librairie fonctionnelle en Python avec base de donnée en .json
